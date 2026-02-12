@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Название твоего сайта</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background: url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    margin-top: 120px;
+}
+
+h1 {
+    font-size: 42px;
+    text-shadow: 2px 2px 15px black;
+}
+
+button {
+    margin-top: 40px;
+    padding: 18px 40px;
+    font-size: 20px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+footer {
+    margin-bottom: 25px;
+    font-size: 20px;
+    text-shadow: 1px 1px 8px black;
+}
+
+.help-button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.help-button:hover {
+    background-color: #2980b9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+    <h1>Шпоры на любой предмет просто по нажатию кнопки</h1>
+    <button onclick="openTelegram()">Получить шпоры</button>
+</div>
+
+<footer>
+    Шпаргалки — это хорошо
+    <br>
+    <button class="help-button" onclick="openHelp()">Помощь</button>
+</footer>
+
+<script>
+function openTelegram() {
+    const phoneNumber = "+79152630962"; // ВСТАВЬ СВОЙ НОМЕР
+    const appLink = "tg://resolve?phone=" + phoneNumber;
+    const webLink = "https://t.me/" + phoneNumber;
+
+    // Пытаемся открыть приложение
+    window.location.href = appLink;
+
+    // Если не открылось — открыть веб
+    setTimeout(function() {
+        window.location.href = webLink;
+    }, 1000);
+}
+
+function openHelp() {
+    // Здесь можно добавить действие для кнопки помощи
+    alert("Напишите на вашу почту: roma.a.saprygin@gmail.com");
+}
+</script>
+
+</body>
+</html>
